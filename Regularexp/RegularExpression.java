@@ -32,6 +32,23 @@ public class RegularExpression {
         System.out.println("The email is: " + email);
         System.out.println("Check the email is correct? " + email.matches(regex));
     }
+    
+    /*
+     * mobileNumValidation is a function to check the valid mobile number
+     * @param mobileNum
+     * @return the boolean value either true or false
+     * checking the country code  and 10 digit number must be there
+     */
+    public static boolean mobileNumValidation(String mobileNum) {
+        String mobileNumber = "^[9][1]\\s[6-9]{1}[0-9]{9}$";
+        Pattern p = Pattern.compile(mobileNumber);
+        if ( mobileNumber == null ){
+            return false;
+        }
+        Matcher m = p.matcher(mobileNum);
+
+        return m.matches();
+    }
 
 
 
@@ -48,6 +65,9 @@ public class RegularExpression {
         System.out.println(usernameValidation(lname));
 
         email();
+        System.out.print("Enter the your Mobile Number : ");
+        String mNumber = input.nextLine();
+        System.out.println(mobileNumValidation(mNumber));
 
 
     }
