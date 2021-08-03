@@ -29,6 +29,10 @@ public class RegularExpression {
         System.out.print("Enter the your First Name : ");
         String fname = input.nextLine();
         System.out.println(usernameValidation(fname));
+        //taking input of last name
+        System.out.print("Enter the your Last Name : ");
+        String lname = input.nextLine();
+        System.out.println(usernameValidation(lname));
 
 
     }
