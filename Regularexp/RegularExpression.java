@@ -52,10 +52,11 @@ public class RegularExpression {
     /*
      passwordValidation is a function to check password validation
       password validation part 1 is enter minimum 8 characters
+      password validation part 2 is  having minimum 1 upper case character.
      */
     public static boolean passwordValidation(String password){
 
-        String regex = "^[a-z A-z]{8,}$";
+        String regex = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
         Pattern p = Pattern.compile(regex);
 
         if ( password == null ){
