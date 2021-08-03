@@ -49,6 +49,22 @@ public class RegularExpression {
 
         return m.matches();
     }
+    /*
+     passwordValidation is a function to check password validation
+      password validation part 1 is enter minimum 8 characters
+     */
+    public static boolean passwordValidation(String password){
+
+        String regex = "^[a-z A-z]{8,}$";
+        Pattern p = Pattern.compile(regex);
+
+        if ( password == null ){
+            return false;
+        }
+        Matcher m = p.matcher(password);
+
+        return m.matches();
+    }
 
 
 
@@ -68,7 +84,14 @@ public class RegularExpression {
         System.out.print("Enter the your Mobile Number : ");
         String mNumber = input.nextLine();
         System.out.println(mobileNumValidation(mNumber));
+        //geting input for password
+
+        System.out.print("Enter the your Password : ");
+        String password = input.nextLine();
+        System.out.println(passwordValidation(password));
+    }
+
 
 
     }
-}
+
